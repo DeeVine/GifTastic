@@ -34,8 +34,8 @@ function renderGifs() {
   var topic = $(this).attr("button-text");
 
   // Constructing a URL to search Giphy for the name of the topic who said the quote
-  var queryURL = "http://api.giphy.com/v1/gifs/search?q=" +
-    topic + "&api_key=dc6zaTOxFJmzC&limit=10";
+  var queryURL = "https://api.giphy.com/v1/gifs/search?q=" +
+    topic + "&api_key=a4a42f47d4854fedbb90594a549475f5&limit=10";
 
   // Performing our AJAX GET request
   $.ajax({
@@ -74,8 +74,8 @@ function renderGifs() {
           topicImage.attr("data-animate", results[i].images.fixed_height.url);
          
           // Appending the paragraph and topicImage we created to the "gifDiv" div we created
-          gifDiv.append(p);
           gifDiv.append(topicImage);
+          gifDiv.append(p);
 
           // Prepending the gifDiv to the "#gifs-appear-here" div in the HTML
           $(".gifs-go-here").prepend(gifDiv);
