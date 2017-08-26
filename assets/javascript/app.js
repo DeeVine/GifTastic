@@ -1,4 +1,4 @@
-var topicsArray = ['dog', 'cat', 'bird', 'monkey'];
+var topicsArray = ['dog', 'cat', 'monkey', 'golden state warriors', 'video games', 'bbq'];
 
 generateButtons();
 //generate initial buttons
@@ -7,6 +7,7 @@ function generateButtons () {
 	for (var i = 0; i < topicsArray.length; i++) {	
 	var b = $('<button>');
 	b.addClass('gif-button');
+  b.addClass('btn');
 	b.attr('button-text', topicsArray[i]);
 	b.text(topicsArray[i]);
 	$('#gif-buttons').append(b);
@@ -22,12 +23,11 @@ $("#add-button").on("click", function(event) {
       generateButtons();
 });
 
-
 renderGifs();
 
 function renderGifs() {
 
-	$(".gif-button").on("click", function() {
+	$(".gif-button").off().on("click", function() {
   // In this case, the "this" keyword refers to the button that was clicked
   $('.gifs-go-here').empty();
 
@@ -74,8 +74,8 @@ function renderGifs() {
           topicImage.attr("data-animate", results[i].images.fixed_height.url);
          
           // Appending the paragraph and topicImage we created to the "gifDiv" div we created
-          gifDiv.append(topicImage);
           gifDiv.append(p);
+          gifDiv.append(topicImage);
 
           // Prepending the gifDiv to the "#gifs-appear-here" div in the HTML
           $(".gifs-go-here").prepend(gifDiv);

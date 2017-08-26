@@ -1,0 +1,22 @@
+body {
+	background-color: #F2F2F2;
+}
+
+button {
+	background-color: #619599;
+	color: white;
+}
+
+.gif-button {
+	font-size: 16px;
+	margin: 3px;
+}
+
+.item {
+	float: left;
+	margin-right: 15px;
+}
+
+/*.gif {
+	float: left;
+}*/
